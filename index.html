@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOM - Kanban Operation Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>KOM - Kanban Operation Management</h1>
+        <h3>Organizza e gestisci le tue attività</h3>
+    </header>
+
+    <main>
+        <section id="nuova-attivita">
+            <h2>Nuova attività</h2>
+
+            <form id="kanban-board">
+                <input
+                    type="text"
+                    id="task-title"
+                    placeholder="Titolo dell'attività"
+                    required
+                >
+
+                <select id="priorita">
+                    <option value="bassa">Bassa</option>
+                    <option value="media" selected>Media</option>
+                    <option value="alta">Alta</option>
+                </select>
+
+                <input
+                    type="text"
+                    id="operatore"
+                    placeholder="Operatore assegnato"
+                    required
+                >
+
+                <button type="submit">Aggiungi</button>
+            </form>
+        </section>
+
+        <br>
+        <table border="1">
+            <tr>
+                <td><strong>Da fare</strong></td>
+                <td><strong>In corso</strong></td>
+                <td><strong>Completata</strong></td>
+            </tr>
+        </table>
+        <br>
+        <button type="reset">Reset</button>
+    </main>
+</body>
+</html>
