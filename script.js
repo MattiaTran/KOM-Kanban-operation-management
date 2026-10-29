@@ -109,3 +109,42 @@ function mostraAttivita() {
  
     aggiornaContatori();
 }
+
+
+function spostaAttivita(id, direzione) {
+    let taskTrovata = null;
+ 
+    for (let i = 0; i < attivita.length; i++) {
+        if (attivita[i].id == id) {
+            taskTrovata = attivita[i];
+            break;
+        }
+    }
+ 
+    if (!taskTrovata) return;
+ 
+    const posizione = stati.indexOf(taskTrovata.stato);
+    const nuovaPosizione = posizione + direzione;
+ 
+    if (nuovaPosizione >= 0 && nuovaPosizione < stati.length) {
+        taskTrovata.stato = stati[nuovaPosizione];
+ 
+        salvaAttivita();
+        mostraAttivita();
+    }
+}
+ 
+function eliminaAttivita(id) {
+    const nuovoArray = [];
+ 
+    for (let i = 0; i < attivita.length; i++) {
+        if (attivita[i].id !== id) {
+            nuovoArray.push(attivita[i]);
+        }
+    }
+ 
+    attivita = nuovoArray;
+ 
+    salvaAttivita();
+    mostraAttivita();
+}
