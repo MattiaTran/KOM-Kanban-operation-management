@@ -13,3 +13,33 @@ function salvaAttivita() {
     localStorage.setItem("attivita", JSON.stringify(attività));
 }
 
+form.addEventListener("submit", gestisciSubmit);
+
+
+function gestisciSubmit(event) {
+    event.preventDefault();
+ 
+    const titolo = inputTitolo.value.trim();
+    const priorita = inputPriorita.value;
+    const operatore = inputOperatore.value.trim();
+ 
+    if (titolo === "" || operatore === "") {
+        alert("Inserisci il titolo e l'operatore!");
+        return;
+    }
+ 
+    const nuovaAttivita = {
+        id: Date.now(),
+        titolo: titolo,
+        priorita: priorita,
+        operatore: operatore,
+        stato: "da-fare"
+    };
+ 
+    attivita.push(nuovaAttivita);
+ 
+    salvaAttivita();
+    mostraAttivita();
+ 
+    form.reset();
+}
