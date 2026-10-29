@@ -19,7 +19,7 @@
             <form id="kanban-board">
                 <input
                     type="text"
-                    id="task-title"
+                    id="titolo"
                     placeholder="Titolo dell'attività"
                     required
                 >
@@ -43,14 +43,29 @@
 
         <br>
         <table border="1">
-            <tr>
-                <td><strong>Da fare</strong></td>
-                <td><strong>In corso</strong></td>
-                <td><strong>Completata</strong></td>
-            </tr>
-        </table>
-        <br>
-        <button type="reset">Reset</button>
+    <tr>
+        <td><strong>Da fare</strong></td>
+        <td><strong>In corso</strong></td>
+        <td><strong>Completata</strong></td>
+    </tr>
+    <tr>
+        <td><div id="da-fare"></div></td>
+        <td><div id="in-corso"></div></td>
+        <td><div id="completata"></div></td>
+    </tr>
+</table>
+
+<label for="filtro">Filtra per priorità:</label>
+<select id="filtro">
+    <option value="tutte">Tutte</option>
+    <option value="bassa">Bassa</option>
+    <option value="media">Media</option>
+    <option value="alta">Alta</option>
+</select>
+
+<button type="button" id="reset">Reset</button>
+
+<script src="script.js"></script>
     </main>
 </body>
 </html>
