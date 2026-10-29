@@ -148,3 +148,22 @@ function eliminaAttivita(id) {
     salvaAttivita();
     mostraAttivita();
 }
+
+function aggiornaContatori() {
+    for (let i = 0; i < stati.length; i++) {
+        const stato = stati[i];
+        
+        let numero = 0;
+        for (let j = 0; j < attivita.length; j++) {
+            if (attivita[j].stato == stato) {
+                numero++;
+            }
+        }
+
+        const spanContatore = document.getElementById("count-" + stato);
+        
+        if (spanContatore) {
+            spanContatore.textContent = "(" + numero + ")";
+        }
+    }
+}
