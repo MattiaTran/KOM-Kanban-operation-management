@@ -167,3 +167,15 @@ function aggiornaContatori() {
         }
     }
 }
+
+filtro.addEventListener("change", mostraAttivita);
+ 
+pulsanteReset.addEventListener("click", function() {
+    if (confirm("Vuoi eliminare tutte le attività?")) {
+        attivita = [];
+        salvaAttivita();
+        mostraAttivita();
+    }
+});
+ 
+mostraAttivita();
