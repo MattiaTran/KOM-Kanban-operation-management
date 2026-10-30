@@ -10,7 +10,7 @@ const stati = ["da-fare", "in-corso", "completata"];
 let attivita = JSON.parse(localStorage.getItem("attivita")) || [];
  
 function salvaAttivita() {
-    localStorage.setItem("attivita", JSON.stringify(attivita));
+    localStorage.setItem("attivita", JSON.stringify(attività));
 }
 
 form.addEventListener("submit", gestisciSubmit);
